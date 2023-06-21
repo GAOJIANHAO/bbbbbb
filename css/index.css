@@ -1,0 +1,162 @@
+html {
+  font-size: 100px;
+}
+/* 通用样式 */
+body,
+html,
+#app {
+  height: 100%;
+  overflow: hidden;
+}
+#app {
+  position: relative;
+  margin: 0 auto;
+  max-width: 540px;
+  font-size: 0.12rem;
+  color: aliceblue;
+}
+.header,
+.footer-box,
+.main-box {
+  box-sizing: border-box;
+  height: 1rem;
+  overflow: hidden;
+}
+.main-box {
+  height: calc(100vh - 2rem);
+}
+/* loading层 */
+.loading-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  background: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-box .content img,
+.loading-box .content span {
+  display: block;
+}
+.loading-box .content img {
+  margin: 0 auto;
+  width: 0.5rem;
+  height: 0.5rem;
+}
+.loading-box .content span {
+  margin-top: 0.1rem;
+  color: #1989fa;
+}
+/* 背景层2个 */
+.mark-image,
+.mark-overlay {
+  position: absolute;
+  top: -10%;
+  left: -10;
+  z-index: -2;
+  width: 120%;
+  height: 120%;
+}
+.mark-image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(6px);
+}
+.mark-overlay {
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.5);
+}
+/* 头部 */
+.header {
+  padding-top: 0.2rem;
+  display: flex;
+}
+.header .base {
+  display: flex;
+}
+.header .base .cover img {
+  width: 0.7rem;
+  height: 0.7rem;
+  overflow: hidden;
+}
+.header .base .info h3 {
+  padding-top: 0.2rem;
+}
+.header .player-button {
+  margin-left: 0.3rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: url(http://zxt_team.gitee.io/qq-music-player/images/music.svg) no-repeat;
+  background-size: cover;
+}
+.header .player-button.move {
+  animation: manjianghong 1s linear 0s infinite both;
+}
+@keyframes manjianghong {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* 歌词 */
+.main-box {
+  text-align: center;
+}
+.main-box .wraper {
+  transform: translateY(0);
+  transition: transform 0.3s;
+}
+.main-box .wraper p {
+  height: 0.5rem;
+  line-height: 0.5rem;
+  text-align: center;
+  font-size: 0.15rem;
+}
+.main-box .wraper p.active {
+  color: #31C27C;
+  transition: color 0.3s;
+}
+/* 尾部 */
+.footer-box .bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.1rem;
+}
+.footer-box .bar .progress {
+  width: 18rem;
+  height: 0.6px;
+  background-color: #555;
+}
+.footer-box .bar .progress .already {
+  width: 0%;
+  background-color: #31C27C;
+  height: 0.02rem;
+}
+.footer-box .downLoad {
+  position: absolute;
+  top: 6rem;
+  left: 1rem;
+  display: block;
+  text-align: center;
+  line-height: 0.5rem;
+  width: 2rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  background: url(http://zxt_team.gitee.io/qq-music-player/images/sprite_play.png) no-repeat #31C27C;
+  background-position: 0.2rem -2.74rem;
+  background-size: 0.4rem 3.3rem;
+  color: aliceblue;
+  font-size: 0.2rem;
+  text-indent: 0.3rem;
+}
+.audiobox {
+  display: none;
+}
